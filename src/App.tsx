@@ -5,8 +5,11 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 
 function App() {
+  // Get the base path from Vite's base configuration
+  const basename = import.meta.env.PROD ? '/CedarBayTrailCo2026' : '';
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1">

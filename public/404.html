@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Cedar Bay Trail Co.</title>
+  <script>
+    // GitHub Pages 404 redirect for single-page applications
+    // https://github.com/rafgraph/spa-github-pages
+    const path = window.location.pathname.slice(1);
+    const base = '/CedarBayTrailCo2026';
+    
+    if (path && !path.startsWith('CedarBayTrailCo2026')) {
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + 
+        (window.location.port ? ':' + window.location.port : '') +
+        base + '/#/' + path + window.location.search + window.location.hash
+      );
+    } else {
+      // Redirect to the app with the correct base path
+      window.location.replace(
+        window.location.protocol + '//' + window.location.hostname + 
+        (window.location.port ? ':' + window.location.port : '') +
+        base + '/'
+      );
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
