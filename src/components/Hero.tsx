@@ -1,16 +1,30 @@
 import { Link } from 'react-router-dom';
 import { AlertTriangle, ArrowRight } from 'lucide-react';
-// Import your photo (replace 'your-trail-photo.jpg' with your actual filename)
-import heroImage from '../assets/tim-foster-RI5vBBS77fQ-unsplash.jpg';
+import OptimizedImage from './OptimizedImage';
+import hero1920Webp from '../assets/hero/hero-1920w.webp';
+import hero1920Jpg from '../assets/hero/hero-1920w.jpg';
 
 export default function Hero() {
   return (
-    <div className="relative h-screen bg-cover bg-center bg-gradient-to-r from-black/80 to-black/60"
-      style={{
-        backgroundImage: `url(${heroImage})`,
-        backgroundBlendMode: 'overlay'
-      }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/20">
+    <div className="relative h-screen overflow-hidden">
+      {/* Background image */}
+      <OptimizedImage
+        src={hero1920Jpg}
+        alt="Fat biking in snowy trails"
+        className="absolute inset-0 w-full h-full object-cover"
+        priority={true}
+        sizes="100vw"
+        webpSrcSet={hero1920Webp}
+        fallbackSrcSet={hero1920Jpg}
+        webpType="image/webp"
+        fallbackType="image/jpeg"
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/30" />
+
+      {/* Content layer */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-2xl shadow-black text-shadow-black px-6 py-2 rounded-lg">
           Welcome to Cedar Bay Trail Co.
         </h1>

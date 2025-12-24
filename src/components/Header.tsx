@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/CBTCo-cropped.png';
+import OptimizedImage from './OptimizedImage';
+import logoWebp from '../assets/logo/logo.webp';
+import logoPng from '../assets/logo/logo.png';
 
 export default function Header() {
   return (
@@ -7,10 +9,17 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex items-center space-x-2 group">
-            <img 
-              src={logo} 
-              alt="Cedar Bay Trail Co. Logo" 
-              className="h-20 w-auto group-hover:opacity-80 transition-opacity" 
+            <OptimizedImage
+              src={logoPng}
+              alt="Cedar Bay Trail Co. Logo"
+              className="h-20 w-auto group-hover:opacity-80 transition-opacity"
+              priority={true}
+              loading="eager"
+              sizes="80px"
+              webpSrcSet={logoWebp}
+              fallbackSrcSet={logoPng}
+              webpType="image/webp"
+              fallbackType="image/png"
             />
 
           </Link>

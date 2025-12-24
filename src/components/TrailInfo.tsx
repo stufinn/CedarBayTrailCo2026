@@ -1,6 +1,10 @@
 import { MapPin, Clock, AlertCircle, ExternalLink, X } from 'lucide-react';
 import { useState } from 'react';
-import trailMap from '../assets/Cedar_Bay_fatbike_trail_map_2021.png';
+import OptimizedImage from './OptimizedImage';
+import trailMapSmallWebp from '../assets/trail-map/trailMap-1024w.webp';
+import trailMapSmallPng from '../assets/trail-map/trailMap-1024w.png';
+import trailMapLargeWebp from '../assets/trail-map/trailMap-1920w.webp';
+import trailMapLargePng from '../assets/trail-map/trailMap-1920w.png';
 
 export default function TrailInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,10 +20,16 @@ export default function TrailInfo() {
               className="bg-gray-200 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200"
               onClick={() => setIsModalOpen(true)}
             >
-              <img
-                src={trailMap}
+              <OptimizedImage
+                src={trailMapSmallPng}
                 alt="Cedar Bay Trail Map 2021"
                 className="w-full h-auto"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                webpSrcSet={trailMapSmallWebp}
+                fallbackSrcSet={trailMapSmallPng}
+                webpType="image/webp"
+                fallbackType="image/png"
               />
             </div>
             <p className="text-sm text-gray-600 mt-4 text-center">Click map to view full size</p>
@@ -85,7 +95,7 @@ export default function TrailInfo() {
           className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
           onClick={() => setIsModalOpen(false)}
         >
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative max-w-full max-h-full flex items-center justify-center">
             <button
               className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors duration-200 z-10"
               onClick={() => setIsModalOpen(false)}
@@ -93,12 +103,19 @@ export default function TrailInfo() {
             >
               <X className="w-6 h-6 text-gray-900" />
             </button>
-            <img
-              src={trailMap}
-              alt="Cedar Bay Trail Map 2021 - Full Size"
-              className="max-w-full max-h-full object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <div onClick={(e) => e.stopPropagation()} className="max-w-full max-h-[90vh]">
+              <OptimizedImage
+                src={trailMapLargePng}
+                alt="Cedar Bay Trail Map 2021 - Full Size"
+                className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg"
+                priority={true}
+                sizes="100vw"
+                webpSrcSet={trailMapLargeWebp}
+                fallbackSrcSet={trailMapLargePng}
+                webpType="image/webp"
+                fallbackType="image/png"
+              />
+            </div>
           </div>
         </div>
       )}
