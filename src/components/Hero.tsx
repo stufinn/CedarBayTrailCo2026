@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AlertTriangle, ArrowRight } from 'lucide-react';
 // Import your photo (replace 'your-trail-photo.jpg' with your actual filename)
 import heroImage from '../assets/tim-foster-RI5vBBS77fQ-unsplash.jpg';
 
@@ -16,16 +17,43 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-xl shadow-black max-w-3xl font-semibold  px-4 py-2 rounded-lg">
           Experience premier fat biking and snowshoeing trails in beautiful Sioux Lookout, Ontario
         </p>
-        <div className="mb-8 bg-orange-500/95 text-white p-6 rounded-lg shadow-xl border border-white/20 max-w-2xl">
+        <div className="mb-8 bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-xl shadow-2xl border-2 border-orange-300/50 max-w-2xl backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
+          <div className="flex items-center justify-center mb-3">
+            <AlertTriangle className="w-6 h-6 mr-2 animate-pulse" />
+            <span className="text-lg font-bold uppercase tracking-wide">Important Notice</span>
+          </div>
           <p className="text-lg font-semibold">Before you ride or hike the trails,</p>
           <p className="text-lg font-semibold">please be sure to register.</p>
         </div>
         <Link
           to="/register"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-lg"
+          className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 shadow-2xl border-2 border-blue-400/50 transform hover:scale-105 hover:shadow-blue-500/25 flex items-center space-x-2"
         >
-          Register Now
+          <span>Register Now</span>
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
+      </div>
+      
+      {/* Photo Attribution */}
+      <div className="absolute bottom-2 right-2 text-white/70 text-xs bg-black/30 px-2 py-1 rounded backdrop-blur-sm">
+        Photo by{' '}
+        <a 
+          href="https://unsplash.com/@timberfoster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          className="hover:text-white transition-colors underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Tim Foster
+        </a>{' '}
+        on{' '}
+        <a 
+          href="https://unsplash.com/photos/a-couple-of-bikes-that-are-sitting-in-the-snow-RI5vBBS77fQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          className="hover:text-white transition-colors underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Unsplash
+        </a>
       </div>
     </div>
   );
