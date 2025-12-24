@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Community</h3>
             <a
-              href="https://www.facebook.com/groups/cedarbaytrailco"
+              href="https://www.facebook.com/groups/326260264407436"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors"
