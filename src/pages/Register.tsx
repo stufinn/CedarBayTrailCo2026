@@ -1,6 +1,16 @@
-import { Check, Mail, FileText, Zap } from 'lucide-react';
+import { Check, Mail, FileText, Zap, Copy } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Register() {
+  const [copied, setCopied] = useState(false);
+  const emailAddress = 'cedarbaytrailcompany@gmail.com';
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(emailAddress);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,7 +27,7 @@ export default function Register() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Annual Memberships</h3>
                 <div className="space-y-3">
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors">
+                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 transition-colors">
                     <div className="flex justify-between items-start mb-1">
                       <p className="font-semibold text-gray-900">Single Fatbike</p>
                       <span className="text-2xl font-bold text-blue-600">$100</span>
@@ -25,7 +35,7 @@ export default function Register() {
                     <p className="text-sm text-gray-600">Individual access to all fat biking trails</p>
                   </div>
 
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors">
+                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 transition-colors">
                     <div className="flex justify-between items-start mb-1">
                       <p className="font-semibold text-gray-900">Family Fatbike</p>
                       <span className="text-2xl font-bold text-blue-600">$150</span>
@@ -33,7 +43,7 @@ export default function Register() {
                     <p className="text-sm text-gray-600">Up to 4 family members on fat biking trails</p>
                   </div>
 
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-teal-500 transition-colors">
+                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 transition-colors">
                     <div className="flex justify-between items-start mb-1">
                       <p className="font-semibold text-gray-900">Single Snowshoe</p>
                       <span className="text-2xl font-bold text-teal-600">$30</span>
@@ -41,7 +51,7 @@ export default function Register() {
                     <p className="text-sm text-gray-600">Individual access to all snowshoeing trails</p>
                   </div>
 
-                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-teal-500 transition-colors">
+                  <div className="bg-white border-2 border-gray-200 rounded-lg p-4 transition-colors">
                     <div className="flex justify-between items-start mb-1">
                       <p className="font-semibold text-gray-900">Family Snowshoe</p>
                       <span className="text-2xl font-bold text-teal-600">$50</span>
@@ -90,8 +100,22 @@ export default function Register() {
                       <span>Send Payment via E-Transfer</span>
                     </h3>
                     <p className="text-gray-700 mb-3">Send an e-transfer for your chosen membership or day pass:</p>
-                    <div className="bg-white rounded p-3 mb-3">
-                      <p className="font-mono text-sm font-semibold text-gray-900 break-all">cedarbaytrailcompany@gmail.com</p>
+                    <div className="bg-white rounded p-3 mb-3 flex items-center justify-between gap-2">
+                      <p className="font-mono text-sm font-semibold text-gray-900 break-all">{emailAddress}</p>
+                      <button
+                        onClick={handleCopyEmail}
+                        className="flex-shrink-0 p-2 hover:bg-gray-100 rounded transition-colors group relative"
+                        aria-label="Copy email address"
+                      >
+                        {copied ? (
+                          <Check className="w-4 h-4 text-green-600" />
+                        ) : (
+                          <Copy className="w-4 h-4 text-gray-600 group-hover:text-blue-600" />
+                        )}
+                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                          {copied ? 'Copied!' : 'Copy email'}
+                        </span>
+                      </button>
                     </div>
                     <p className="text-sm text-gray-600">Include your name and membership type in the transfer note</p>
                   </div>

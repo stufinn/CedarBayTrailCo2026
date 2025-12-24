@@ -46,7 +46,7 @@ export default function TrailInfo() {
                   Located in beautiful Sioux Lookout, Ontario, our trail head provides easy access to a network of well-maintained fat biking and snowshoeing routes.
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/gCK5VKPKnUK3DcFF8"
+                  href="https://www.google.com/maps/place/Cedar+Bay+and+Friends/@50.103549,-91.934902,1312m/data=!3m1!1e3!4m6!3m5!1s0x52989b8d278bddff:0x738f9d8de95fb45b!8m2!3d50.1035494!4d-91.9349022!16s%2Fg%2F11f7780_0j?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 group"
