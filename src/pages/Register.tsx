@@ -22,7 +22,7 @@ export default function Register() {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Pricing & Membership</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">2026 Pricing & Membership</h2>
 
             <div className="space-y-6">
               <div>
