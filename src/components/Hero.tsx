@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
       
       {/* Photo Attribution */}
-      <div className="absolute bottom-2 right-2 text-white/70 text-xs bg-black/30 px-2 py-1 rounded backdrop-blur-sm">
+      <div className="absolute bottom-2 right-2 text-white/70 text-xs bg-black/30 px-2 py-1 rounded backdrop-blur-sm z-20">
         Photo by{' '}
         <a 
           href="https://unsplash.com/@timberfoster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
