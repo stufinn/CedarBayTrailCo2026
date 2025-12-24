@@ -1,4 +1,4 @@
-import { Check, Mail, FileText, Zap, Copy } from 'lucide-react';
+import { Check, Mail, FileText, Zap, Copy, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import BudgetBreakdown from '../components/BudgetBreakdown';
 
@@ -137,12 +137,14 @@ export default function Register() {
                     </h3>
                     <p className="text-gray-700 mb-3">Complete the online waiver form:</p>
                     <a
-                      href="#"
-                      className="inline-block bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors font-medium text-sm mb-3"
+                      href="https://app.waiversign.com/e/5f995bf516eb010019446497/doc/5f99742ad56fea00190cafa3?event=none"
+                      target='_blank'
+                      className="inline-flex items-center gap-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors font-medium text-sm mb-3 relative group"
+                      title="Opens in new tab"
                     >
-                      Access Waiver Portal
+                      <span>Access Waiver Portal</span>
+                      <ExternalLink className="w-4 h-4" />
                     </a>
-                    <p className="text-sm text-gray-600">Tap the 'Initial' or 'Signature' boxes to auto-populate these areas</p>
                   </div>
                 </div>
               </div>
