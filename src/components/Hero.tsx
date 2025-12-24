@@ -1,20 +1,22 @@
 import { Link } from 'react-router-dom';
+// Import your photo (replace 'your-trail-photo.jpg' with your actual filename)
+import heroImage from '../assets/tim-foster-RI5vBBS77fQ-unsplash.jpg';
 
 export default function Hero() {
   return (
-    <div className="relative h-screen bg-cover bg-center bg-gradient-to-r from-blue-900/90 to-teal-900/90"
+    <div className="relative h-screen bg-cover bg-center bg-gradient-to-r from-black/80 to-black/60"
       style={{
-        backgroundImage: 'url(https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+        backgroundImage: `url(${heroImage})`,
         backgroundBlendMode: 'overlay'
       }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/20">
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-2xl shadow-black text-shadow-black px-6 py-2 rounded-lg">
           Welcome to Cedar Bay Trail Co.
         </h1>
-        <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow-md max-w-3xl">
+        <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-xl shadow-black max-w-3xl font-semibold  px-4 py-2 rounded-lg">
           Experience premier fat biking and snowshoeing trails in beautiful Sioux Lookout, Ontario
         </p>
-        <div className="mb-8 bg-orange-500/95 text-white p-6 rounded-lg shadow-lg max-w-2xl">
+        <div className="mb-8 bg-orange-500/95 text-white p-6 rounded-lg shadow-xl border border-white/20 max-w-2xl">
           <p className="text-lg font-semibold">Before you ride or hike the trails,</p>
           <p className="text-lg font-semibold">please be sure to register.</p>
         </div>

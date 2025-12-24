@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
-import { Mountain } from 'lucide-react';
+import logo from '../assets/CBTCo-cropped.png';
 
 export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex items-center space-x-2 group">
-            <Mountain className="w-8 h-8 text-blue-600 group-hover:text-blue-700 transition-colors" />
-            <span className="font-bold text-xl text-gray-900">Cedar Bay Trail Co.</span>
+            <img 
+              src={logo} 
+              alt="Cedar Bay Trail Co. Logo" 
+              className="h-20 w-auto group-hover:opacity-80 transition-opacity" 
+            />
+
           </Link>
 
           <nav className="flex items-center space-x-8">
