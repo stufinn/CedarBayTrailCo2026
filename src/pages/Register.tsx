@@ -20,7 +20,7 @@ export default function Register() {
                   <div className="bg-white border-2 border-gray-200 rounded-lg p-4 hover:border-blue-500 transition-colors">
                     <div className="flex justify-between items-start mb-1">
                       <p className="font-semibold text-gray-900">Single Fatbike</p>
-                      <span className="text-2xl font-bold text-blue-600">$80</span>
+                      <span className="text-2xl font-bold text-blue-600">$100</span>
                     </div>
                     <p className="text-sm text-gray-600">Individual access to all fat biking trails</p>
                   </div>
