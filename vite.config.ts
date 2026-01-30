@@ -14,7 +14,8 @@ export default defineConfig({
       webp: { quality: 80 },
     }),
   ],
-  base: process.env.NODE_ENV === 'production' ? '/CedarBayTrailCo2026/' : '/',
+  // Use root path for Netlify, GitHub Pages path for GitHub deployment
+  base: process.env.DEPLOY_TARGET === 'github-pages' ? '/CedarBayTrailCo2026/' : '/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
