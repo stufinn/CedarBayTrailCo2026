@@ -5,8 +5,8 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 
 function App() {
-  // Get the base path from Vite's base configuration
-  const basename = import.meta.env.PROD ? '/CedarBayTrailCo2026' : '';
+  // Use basename only for GitHub Pages deployment
+  const basename = import.meta.env.BASE_URL !== '/' ? import.meta.env.BASE_URL : undefined;
   
   return (
     <BrowserRouter basename={basename}>
