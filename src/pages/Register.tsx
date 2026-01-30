@@ -1,6 +1,6 @@
 import { Check, Mail, FileText, Zap, Copy, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
-import BudgetBreakdown from '../components/BudgetBreakdown';
+// import BudgetBreakdown from '../components/BudgetBreakdown';
 
 export default function Register() {
   const [copied, setCopied] = useState(false);
@@ -179,7 +179,8 @@ export default function Register() {
           </div>
         </div>
       </div>
-      <BudgetBreakdown />
+      {/* Temporarily disabled until details are finalized */}
+      {/* <BudgetBreakdown /> */}
     </div>
   );
 }
